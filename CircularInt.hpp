@@ -7,19 +7,19 @@
 using namespace std;
 
 class CircularInt{
-   // private:
-
-
-    public:
+    private:
         int max;
         int min;
         int current;
+
+
+    public:
+
         CircularInt();
         CircularInt(int, int);
         CircularInt(int,int,int);
         ~CircularInt();
         
-       // int keepInRange(int  , int  , int  );
 
 /*==========Add==========*/
         friend const CircularInt operator + (int, CircularInt const &);
@@ -97,7 +97,6 @@ class CircularInt{
 
         CircularInt& operator|=(const int);
         CircularInt& operator|=(const CircularInt&);
-
         CircularInt& operator&=(const int);
         CircularInt& operator&=(const CircularInt&);
 
@@ -114,10 +113,7 @@ class CircularInt{
         
         
         
-        
-        
-        
-        
+       
         
         
         
