@@ -110,6 +110,7 @@ catch (const string& message) {
      cout << (hour4 < hour4) << endl;            //      obj<obj?  false = 0 
  }
  
+ /**testing the Modulo operator**/
  void test6(){
     cout<<"Testing the modulo operator on CircularInt hour5 : "<<endl;
     CircularInt hour5 {1, 12};
