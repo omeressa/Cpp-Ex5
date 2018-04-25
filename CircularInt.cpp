@@ -120,16 +120,16 @@ CircularInt& CircularInt::operator+=(int num) {
 /** operator - is the same as operator + , we only change + to - */
 
 const CircularInt operator - (int num, CircularInt const & other){
-	int diff = num;
-				CircularInt temp(other);
-	temp.current += diff % (other.max - other.min + 1);
-	if(temp.current > temp.max)
-		temp.current -= (temp.max - temp.min + 1);
-	if(temp.current < temp.min)
-		temp.current += (temp.max - temp.min + 1);
-	return temp;
+  CircularInt temp(other);
+  int diff = (temp.max-temp.min+1)%other.current;
+  if(diff>num)
+  diff=num-diff;
+  else if(diff<=num)
+  diff=num+diff;
+  diff=keepInRange(temp.min,temp.max,diff);
+  temp.current=diff;
 
-	
+	return temp;
 }
 
 const CircularInt operator - (CircularInt const & other, int num){
