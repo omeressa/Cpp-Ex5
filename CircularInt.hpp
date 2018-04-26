@@ -20,7 +20,10 @@ class CircularInt{
         CircularInt(int,int,int);
         ~CircularInt();
         
-
+/*==========Equal==========*/
+        CircularInt& operator = (CircularInt const &);
+        CircularInt& operator = ( int );
+    
 /*==========Add==========*/
         friend const CircularInt operator + (int, CircularInt const &);
         friend const CircularInt operator + (CircularInt const &, int);
@@ -55,12 +58,10 @@ class CircularInt{
         CircularInt& operator /= (int);
 
 /*==========Comp==========*/
-        CircularInt& operator = (CircularInt const &);
-        CircularInt& operator = ( int );
-
         friend bool operator == (CircularInt const &, int const);
         friend bool operator == (int const, CircularInt const &);
         friend bool operator == (CircularInt const &, CircularInt const &);
+    
         friend bool operator != (CircularInt const &, int const);
         friend bool operator != (int const, CircularInt const &);
         friend bool operator != (CircularInt const &, CircularInt const &);
@@ -93,10 +94,6 @@ class CircularInt{
         friend const CircularInt operator%(const CircularInt& , const CircularInt& );
         
 /*==========logic==========*/
-        friend const CircularInt operator^(CircularInt&,int);
-        friend const CircularInt operator^(int,CircularInt&);
-        friend const CircularInt operator^(CircularInt&,CircularInt&);
-
         CircularInt& operator|=(const int);
         CircularInt& operator|=(const CircularInt&);
         CircularInt& operator&=(const int);
