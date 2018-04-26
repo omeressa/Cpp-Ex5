@@ -336,7 +336,7 @@ CircularInt& CircularInt::operator = (CircularInt const & obj){
 
 
 CircularInt& CircularInt::operator = (int num){
-
+        num = num% (max-min+1);
 	this->current = num;
 	return *this;
 }
