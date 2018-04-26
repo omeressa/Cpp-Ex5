@@ -272,18 +272,6 @@ CircularInt& CircularInt::operator*=(int num) {
 
 
 const CircularInt operator / ( CircularInt const & other, int num){
-  /*
-	CircularInt temp {other.min, other.max};
-	if(other.min <= num && num <= other.current){
-		for(int i = other.min; i <= other.max; i++)
-			if(other.current == num * i){
-				temp.current = i;
-				break;
-		}
-	}
-	else
-		throw "\"There is no number x in {"+to_string(other.min)+","+to_string(other.max)+"} such that x*"+to_string(num)+"="+to_string(other.current)+"\" ";
-	return temp;*/
 		int temp = (other.current)%num;
 
 	if (temp != 0)
