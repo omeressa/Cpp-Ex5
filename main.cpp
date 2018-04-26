@@ -163,13 +163,14 @@ catch (const string& message) {
  	//  * when is there exactly one answer to a/b?
  	//  * when are there two or more answers to a/b?
  	//	* when is there no answer to a/b? test1();
-
+/*
  test1();
  test2();
  test3();
  test4();
  test5();
  test6();
+ */
  }
 
 
