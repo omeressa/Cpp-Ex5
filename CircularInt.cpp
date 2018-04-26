@@ -1,3 +1,7 @@
+/**created by Omar Essa
+* 4/26/2018
+*/
+
 #include <iostream>
 #include <string>
 #include "CircularInt.hpp"
