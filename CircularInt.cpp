@@ -335,6 +335,14 @@ CircularInt& CircularInt::operator = (CircularInt const & obj){
 }
 
 
+CircularInt& CircularInt::operator = (int num){
+
+	this->current = num;
+	return *this;
+}
+
+
+
 bool operator == (CircularInt const & other, int const num){
     return (other.current == num);
 }
