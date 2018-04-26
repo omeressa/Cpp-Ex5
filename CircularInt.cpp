@@ -38,6 +38,25 @@ CircularInt::CircularInt(int min, int max,int current){
 	return current;
 }
 
+/*====================Equal====================*/
+
+
+CircularInt& CircularInt::operator = (CircularInt const & obj){
+	if(this->max != obj.max || this->min != obj.min)
+		throw " ranges are different one from the other !";
+	else{
+	this->max = obj.max;
+	this->min = obj.min;
+	this->current = obj.current;
+	}
+	return *this;
+}
+
+CircularInt& CircularInt::operator = (int num){
+        this->current = keepInRange(this->min,this->max,num);
+	return *this;
+}
+
 /*====================Add====================*/
 
 /** since "other" is const we cant change the current in it so we need to make a temp CircularInt 
@@ -327,19 +346,6 @@ CircularInt& CircularInt::operator /= (int const num){
 
 /*====================Compare====================*/
 
-CircularInt& CircularInt::operator = (CircularInt const & obj){
-	this->max = obj.max;
-	this->min = obj.min;
-	this->current = obj.current;
-	return *this;
-}
-
-
-CircularInt& CircularInt::operator = (int num){
-        this->current = keepInRange(this->min,this->max,num);
-	return *this;
-}
-
 
 
 bool operator == (CircularInt const & other, int const num){
@@ -417,11 +423,14 @@ std::ostream& operator<<(std::ostream & os,const CircularInt &ci){
 	return os<<ci.current;
 }
 
-istream& operator >> (istream & is, CircularInt& circ){
-		cin >> circ.min >> circ.max;
-		circ.current = circ.min;
+std::istream& operator>>(std::istream & is,CircularInt &ci) {
+	int ans;
+	is>>ans;
+	if(ans>ci.max || ans<ci.min)
+		throw std::invalid_argument( "value not in range\n" );
+	ci.current = ans;
 	return is;
-	}
+}
 	
 	/*====================Modulo====================*/
 	
