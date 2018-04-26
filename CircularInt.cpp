@@ -336,8 +336,7 @@ CircularInt& CircularInt::operator = (CircularInt const & obj){
 
 
 CircularInt& CircularInt::operator = (int num){
-        num = num% (max-min+1);
-	this->current = num;
+        this->current = keepInRange(this->min,this->max,num);
 	return *this;
 }
 
@@ -421,6 +420,7 @@ std::ostream& operator<<(std::ostream & os,const CircularInt &ci){
 istream& operator >> (istream & is, CircularInt& circ){
 		cin >> circ.min >> circ.max;
 		circ.current = circ.min;
+	return is;
 	}
 	
 	/*====================Modulo====================*/
